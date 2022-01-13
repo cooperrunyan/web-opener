@@ -4,21 +4,21 @@ const opn = require('opn');
 const fs = require('fs');
 
 if (process.argv[2] === 'var') {
-  const vars = JSON.parse(fs.readFileSync(process.cwd() + '/vars.json'));
+  const vars = JSON.parse(fs.readFileSync(__dirname + '/vars.json'));
   vars[process.argv[3]] = process.argv[4];
-  fs.writeFileSync(process.cwd() + '/vars.json', JSON.stringify(vars, null, 2));
+  fs.writeFileSync(__dirname + '/vars.json', JSON.stringify(vars, null, 2));
 } else if (process.argv[2] === 'get') {
-  const vars = JSON.parse(fs.readFileSync(process.cwd() + '/vars.json'));
+  const vars = JSON.parse(fs.readFileSync(__dirname + '/vars.json'));
   Object.entries(vars).forEach(([key, value]) => {
     console.log(`"${key}" = "${value}"`);
   });
 } else if (process.argv[2] === 'delete') {
-  const vars = JSON.parse(fs.readFileSync(process.cwd() + '/vars.json'));
+  const vars = JSON.parse(fs.readFileSync(__dirname + '/vars.json'));
   delete vars[process.argv[3]];
-  fs.writeFileSync(process.cwd() + '/vars.json', JSON.stringify(vars, null, 2));
+  fs.writeFileSync(__dirname + '/vars.json', JSON.stringify(vars, null, 2));
 } else {
   let link = process.argv[2];
-  const vars = JSON.parse(fs.readFileSync(process.cwd() + '/vars.json'));
+  const vars = JSON.parse(fs.readFileSync(__dirname + '/vars.json'));
   if (vars[link]) {
     opn(vars[link]);
   } else {
