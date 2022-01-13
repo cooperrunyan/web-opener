@@ -1,5 +1,5 @@
-import opn from 'opn';
-import fs from 'fs';
+const opn = require('opn');
+const fs = require('fs');
 
 if (process.argv[2] === 'var') {
   const vars = JSON.parse(fs.readFileSync(process.cwd() + '/vars.json'));
