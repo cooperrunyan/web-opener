@@ -1,7 +1,8 @@
 {
   "name": "web-opener",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "main": "script.js",
+  "preferGlobal": true,
   "bin": {
     "web": "script.js"
   },
