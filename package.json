@@ -1,0 +1,16 @@
+{
+  "name": "web",
+  "version": "0.0.0",
+  "main": "script.js",
+  "type": "module",
+  "bin": {
+    "web": "script.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "wtfpl",
+  "description": "",
+  "dependencies": {
+    "opn": "^6.0.0"
+  }
+}
